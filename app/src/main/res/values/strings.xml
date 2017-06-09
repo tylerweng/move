@@ -2,5 +2,8 @@
     <string name="app_name">Move</string>
     <string name="title_location_permission">Location Permission</string>
     <string name="text_location_permission">Move requires your location to get you on the move!</string>
+    <string name="client_id">vJI7CVsNiOHH_-yTK_QHyn1ij6aKOKk_</string>
+    <string name="server_token">8gFcNDhY_AuZ2WhO9Q960E5tUzlSOMu23r-pMDKe</string>
+    <string name="redirect_uri">https://www.google.com</string>
     <string name="ok">OK</string>
 </resources>
