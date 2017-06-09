@@ -26,8 +26,6 @@ import com.uber.sdk.core.auth.AccessToken;
 import com.uber.sdk.core.auth.Scope;
 import com.uber.sdk.rides.client.SessionConfiguration;
 
-import org.apache.log4j.chainsaw.Main;
-
 import java.util.Arrays;
 
 
@@ -35,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     SessionConfiguration config;
     LocationManager locationManager;
     LoginManager loginManager;
+    Location location;
     String provider;
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
@@ -62,16 +61,15 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        Location location = locationManager.getLastKnownLocation(provider);
+        location = locationManager.getLastKnownLocation(provider);
 
     }
 
     public void configSession() {
         config = new SessionConfiguration.Builder()
-                .setClientId(String.valueOf(R.string.client_id))
-                .setServerToken(String.valueOf(R.string.server_token))
-                .setRedirectUri(String.valueOf(R.string.redirect_uri))
-                .setScopes(Arrays.asList(Scope.RIDE_WIDGETS))
+                .setClientId("vJI7CVsNiOHH_-yTK_QHyn1ij6aKOKk_")
+                .setRedirectUri("https://tylerweng.com")
+                .setScopes(Arrays.asList(Scope.RIDE_WIDGETS, Scope.PROFILE, Scope.REQUEST))
                 .setEnvironment(SessionConfiguration.Environment.SANDBOX)
                 .build();
         UberSdk.initialize(config);
